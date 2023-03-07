@@ -85,3 +85,4 @@ void task_19()
             Console.WriteLine("Палиндром");
     }
 }
+
