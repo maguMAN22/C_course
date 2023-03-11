@@ -86,3 +86,78 @@ void task_19()
     }
 }
 
+void task_25()
+{
+    // Напишите цикл, который принимает на вход два числа (A и B) и 
+    // возводит число A в натуральную степень B.
+    // 3, 5 -> 243 (3⁵)
+    // 2, 4 -> 16
+
+    Console.WriteLine("Введите число A:");
+    double numa = Double.Parse(Console.ReadLine());
+    Console.WriteLine("Введите число B:");
+    double numb = Double.Parse(Console.ReadLine());
+
+    double numCube(double numA, double numB)
+    {
+        double result = Math.Pow(numA, numB);
+        return result;
+    }
+    Console.WriteLine("Число " + numa + " в степени " + numb + "= " + numCube(numa, numb));
+}
+
+void task_27()
+{
+    // Задача 27: Напишите программу, которая принимает 
+    // на вход число и выдаёт сумму цифр в числе.
+    // 452 -> 11
+    // 82 -> 10
+    // 9012 -> 12
+    Console.WriteLine("Введите число:");
+    string numS = Console.ReadLine();
+    string numSumm(string nums)
+    {
+        int summa = 0;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            char term = nums[i];
+            int term1 = term - '0';
+            summa = summa + term1;
+        }
+        string result = Convert.ToString(summa);
+        return result;
+    }
+    Console.WriteLine("Сумма всех цифр в числе = " + numSumm(numS));
+
+
+}
+
+void task_29()
+{
+    Console.WriteLine("Введите размер массива:");
+    int arrL = Int32.Parse(Console.ReadLine());
+
+    int[] gen_array(int arrLength)
+    {
+        int[] arr1 = new int[arrLength];
+        Random rand_num = new Random();
+        for (int i = 0; i < arrLength; i++)
+        {
+            arr1[i] = rand_num.Next(0, arrLength);
+        }
+        return arr1;
+    }
+
+    void print_array(int[] arr)
+    {
+        Console.WriteLine("Вывод массива:");
+        Console.Write("[ ");
+        for (int i = 0; i < arr.Length - 1; i++)
+        {
+            Console.Write(arr[i] + ", ");
+        }
+        Console.Write(arr[arr.Length - 1] + " ]");
+    }
+    print_array(gen_array(arrL));
+}
+task_29();
