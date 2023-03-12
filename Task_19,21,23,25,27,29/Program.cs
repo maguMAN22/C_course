@@ -160,4 +160,3 @@ void task_29()
     }
     print_array(gen_array(arrL));
 }
-task_29();
