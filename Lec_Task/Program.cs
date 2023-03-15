@@ -30,39 +30,58 @@ void replText()
 
 void SortArraymain()
 {
-int[] arr = { 3, 1, 9, 8, 1, 2, 9, 8, 1, 1, 1, 8, 2, 3, 4 };
-void PrintArray(int[] array1)
-{
-    int length = array1.Length;
-    for (int i = 0; i < length; i++)
+    int[] arr = { 3, 1, 9, 8, 1, 2, 9, 8, 1, 1, 1, 8, 2, 3, 4 };
+    void PrintArray(int[] array1)
     {
-        Console.Write(array1[i] + " ");
-    }
-    Console.WriteLine();
-}
-
-void SortArray(int[] array2)
-{
-    for (int i = 0; i < array2.Length; i++)
-    {
-        int minPos = i;
-        for (int j = i + 1; j < array2.Length - 1; j++)
+        int length = array1.Length;
+        for (int i = 0; i < length; i++)
         {
-            if (array2[j] < array2[minPos]) minPos = j;
+            Console.Write(array1[i] + " ");
         }
-        int Buf = array2[i];
-        array2[i] = array2[minPos];
-        array2[minPos] = Buf;
+        Console.WriteLine();
     }
+
+    void SortArray(int[] array2)
+    {
+        for (int i = 0; i < array2.Length; i++)
+        {
+            int minPos = i;
+            for (int j = i + 1; j < array2.Length - 1; j++)
+            {
+                if (array2[j] < array2[minPos]) minPos = j;
+            }
+            int Buf = array2[i];
+            array2[i] = array2[minPos];
+            array2[minPos] = Buf;
+        }
+    }
+
+
+    PrintArray(arr);
+    SortArray(arr);
+    PrintArray(arr);
+}
+
+void fibonacсi()
+{
+
+    double fnum = 1;
+    Console.Write(fnum + " ");
+    double snum = 1;
+    Console.Write(snum + " ");
+    for (int i = 1; i < 50; i++)
+    {
+        double thnum = fnum + snum;
+        Console.Write(thnum + " ");
+        fnum = snum;
+        snum = thnum;
+    }
+
 }
 
 
-PrintArray(arr);
-SortArray(arr);
-PrintArray(arr);
-}
-
-Console.WriteLine("Введите номер задачи(1 или 2):");
+Console.WriteLine("Введите номер задачи(1,2 или 3):");
 int tuskNum = Int32.Parse(Console.ReadLine());
 if (tuskNum == 1) replText();
 else if (tuskNum == 2) SortArraymain();
+else if (tuskNum == 3) fibonacсi();
